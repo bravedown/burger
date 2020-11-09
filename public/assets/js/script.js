@@ -1,5 +1,5 @@
 $(function() {
-    $(".change-burger").on("click", function(event) {
+    $(".change-burger").on("click", function() {
         var id = $(this).data("id");
         var devouredState = {
             devoured: !$(this).data("devoured")
