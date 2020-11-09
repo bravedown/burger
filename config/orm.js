@@ -13,8 +13,8 @@ module.exports = {
             if (err) throw err;
         });
     },
-    updateOne(table, updatedCol, referenceCol, newVal, referenceVal) {
-        connection.query(`UPDATE ?? SET ?? = ? WHERE ?? = ?`, [table, updatedCol, newVal, referenceCol, referenceVal], function(err, result) {
+    updateOne(table, updatedCol, newVal, id) {
+        connection.query(`UPDATE ?? SET ?? = ? WHERE id = ?`, [table, updatedCol, newVal, id], function(err, result) {
             if (err) throw err;
         });
     },

@@ -1,5 +1,4 @@
 const orm = require("../config/orm");
-
 module.exports = {
     getBurgers() {
         return orm.selectAll('burgers');
@@ -7,7 +6,7 @@ module.exports = {
     addBurger(name) {
         orm.insertOne('burgers', 'burger_name', name)
     },
-    devourBurger(name) {
-        orm.updateOne('burgers', 'devoured', 'burger_name', 1, name);
+    updateBurger(id, val) {
+        orm.updateOne('burgers', 'devoured', val, id);
     }
 };
