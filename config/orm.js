@@ -1,9 +1,11 @@
 const connection = require("./connection");
 module.exports = {
-    selectAll(table, cb) {
-        connection.query("SELECT * from ??", [table], (err, result) => {
-            if (err) throw err;
-            cb(result);
+    selectAll(table) {
+        return new Promise((resolve, reject) => {
+            connection.query("SELECT * from ??", [table], (err, result) => {
+                if (err) return reject(err);
+                resolve(result);
+            });
         });
     },
     insertOne(tableName, colName, cellName) {
