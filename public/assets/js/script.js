@@ -1,11 +1,9 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
     $(".change-burger").on("click", function(event) {
       var id = $(this).data("id");
       var devouredState = {
         devoured: !$(this).data("devoured")
       };
-
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
         data: devouredState
